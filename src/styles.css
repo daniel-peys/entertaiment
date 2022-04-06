@@ -1,1 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables */
+
+:root {
+  --col-red-main: #fc4747;
+  --col-red-dark: #ff0000;
+  --col-blue-dark: #10141e;
+  --col-blue-medium: #161d2f;
+  --col-blue-light: rgb(90, 105, 143);
+  --col-white: #fff;
+
+  --font-light: Outfit-Light;
+  --font-medium: Outfit-Medium;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Outfit-Light";
+  src: url("./assets/fonts/Outfit-Light.ttf");
+}
+
+@font-face {
+  font-family: "Outfit-Medium";
+  src: url("./assets/fonts/Outfit-Medium.ttf");
+}
+
+/* Settings */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--col-blue-dark);
+}
+
+/* Flexbox */
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-align-end {
+  align-items: flex-end;
+}
+
+.flex-col-align-self-start {
+  align-self: flex-start;
+}
+
+/* Margins */
+
+.mt-medium {
+  margin-top: 25px;
+}
+
+.mt-large {
+  margin-top: 50px;
+}
+
+/* Typography */
+
+p,
+h1 {
+  color: var(--col-white);
+}
+
+.heading-large {
+  font-size: 32px;
+}
+
+.heading-medium {
+  font-size: 24px;
+}
+
+.heading-small {
+  font-size: 18px;
+}
+
+.text-large {
+  font-size: 15px;
+}
+
+.text-small {
+  font-size: 13px;
+}
+
+.normal {
+  font-family: var(--font-light);
+}
+
+.bold {
+  font-family: var(--font-medium);
+}
+
+/* Buttons */
+
+.btn {
+  border: none;
+  background-color: transparent;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-red {
+  background-color: var(--col-red-main);
+  color: var(--col-white);
+  border-radius: 5px;
+}
+
+.btn-red:hover {
+  background-color: var(--col-white);
+  color: var(--col-blue-dark);
+  transition: 0.2s ease-out;
+}
+
+.btn-transparent {
+  color: var(--col-red-main);
+}
+
+.btn-transparent:hover {
+  color: var(--col-white);
+  transition: 0.2s ease-out;
+}
+
+.btn-form-large {
+  width: 100%;
+  height: 45px;
+}
+
+/* Inputs */
+
+.input {
+  border: none;
+  background-color: transparent;
+}
+
+.input:hover {
+  cursor: pointer;
+}
+
+.input:focus {
+  outline: none;
+  appearance: none;
+  border-bottom-color: var(--col-white);
+}
+
+.input-form {
+  border-bottom: solid 1.5px var(--col-blue-light);
+  color: var(--col-white);
+  caret-color: var(--col-red-main);
+  text-indent: 0.5rem;
+  padding-bottom: 12px;
+  font-size: 1rem;
+}
+
+.input-error {
+  border-bottom-color: var(--col-red-dark);
+}
+
+.input-form-size {
+  width: 100%;
+}
+
+.input-box {
+  position: relative;
+}
+
+.error-msg {
+  color: var(--col-red-dark);
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  font-family: var(--font-light);
+}

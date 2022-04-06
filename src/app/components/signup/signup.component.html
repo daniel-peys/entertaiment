@@ -1,0 +1,103 @@
+<div class="window-container flex flex-col flex-center">
+  <img src="../../../assets/logo.svg" alt="Logo" />
+  <div class="signup-container flex flex-col flex-center">
+    <div class="signup-container-box">
+      <h1 class="heading-large normal flex-col-align-self-start">Sign Up</h1>
+      <form
+        class="flex flex-col flex-center mt-medium"
+        [formGroup]="signupForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="input-box input-form-size">
+          <input
+            type="text"
+            maxlength="30"
+            class="input input-form input-form-size mt-medium"
+            placeholder="Email address"
+            formControlName="emailAddress"
+            [class.input-error]="
+              emailAddress && emailAddress.invalid && emailAddress.touched
+            "
+          />
+          <div
+            *ngIf="emailAddress && emailAddress.invalid && emailAddress.touched"
+          >
+            <div *ngIf="emailAddress.errors?.['required']" class="error-msg">
+              Can't be empty
+            </div>
+            <div *ngIf="emailAddress.errors?.['email']" class="error-msg">
+              Must be a valid email
+            </div>
+          </div>
+        </div>
+        <div class="input-box input-form-size">
+          <input
+            type="password"
+            maxlength="30"
+            class="input input-form input-form-size mt-large"
+            placeholder="Password"
+            formControlName="password"
+            [class.input-error]="
+              password && password.invalid && password.touched
+            "
+          />
+          <div *ngIf="password && password.invalid && password.touched">
+            <div *ngIf="password.errors?.['required']" class="error-msg">
+              Can't be empty
+            </div>
+            <div *ngIf="password.errors?.['minlength']" class="error-msg">
+              At least 8 characters
+            </div>
+          </div>
+          <div
+            *ngIf="signupForm.errors?.['notEqual'] && repeatPassword && !repeatPassword.errors"
+            class="error-msg"
+          >
+            Passwords not equal
+          </div>
+        </div>
+        <div class="input-box input-form-size">
+          <input
+            type="password"
+            maxlength="30"
+            class="input input-form input-form-size mt-large"
+            placeholder="Repeat password"
+            formControlName="repeatPassword"
+            [class.input-error]="
+              repeatPassword && repeatPassword.invalid && repeatPassword.touched
+            "
+          />
+          <div
+            *ngIf="
+              repeatPassword && repeatPassword.invalid && repeatPassword.touched
+            "
+          >
+            <div *ngIf="repeatPassword.errors?.['required']" class="error-msg">
+              Can't be empty
+            </div>
+            <div *ngIf="repeatPassword.errors?.['minlength']" class="error-msg">
+              At least 8 characters
+            </div>
+          </div>
+          <div
+            *ngIf="signupForm.errors?.['notEqual'] && repeatPassword && !repeatPassword.errors"
+            class="error-msg"
+          >
+            Passwords not equal
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-red btn-large btn-form-large mt-large"
+          [disabled]="!signupForm.valid"
+        >
+          Login to your account
+        </button>
+      </form>
+      <div class="login-container flex flex-center mt-medium">
+        <p class="text-large normal">Already have an account?</p>
+        <button class="btn btn-transparent" routerLink="/login">Login</button>
+      </div>
+    </div>
+  </div>
+</div>

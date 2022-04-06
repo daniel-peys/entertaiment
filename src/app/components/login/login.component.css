@@ -1,0 +1,37 @@
+.window-container {
+  height: 100vh;
+}
+
+.window-container > img {
+  margin-bottom: 65px;
+}
+
+.login-container {
+  background-color: var(--col-blue-medium);
+  width: 35vw;
+  min-width: 450px;
+  border-radius: 10px;
+}
+
+.login-container-box {
+  padding: 15px;
+  width: 90%;
+}
+
+.login-container :is(h1) {
+  margin-top: 15px;
+}
+
+.login-container :is(form) {
+  width: 100%;
+}
+
+.signup-container {
+  margin-bottom: 15px;
+}
+
+.signup-container button {
+  margin-left: 9px;
+  line-height: 100%;
+  align-self: flex-end;
+}
